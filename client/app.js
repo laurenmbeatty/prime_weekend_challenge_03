@@ -4,6 +4,11 @@ $(document).ready(function(){
     }).done(function(response){
         console.log(response);
 
+        //need to loop through the response, and assign each epsilonPerson[i] to a slide
+        //maybe epsilonPerson[0] has to equal class current slide, and every other one isn't
+        //then append to dom?
+        //then do the slide, and counters, and arrow functionality, including reversing them
+
         for(var i = 0; i < response.length; i++) {
             //console.log(response[i]);
             var epsilonPerson = response;
@@ -21,6 +26,8 @@ $(document).ready(function(){
 
                 var currentDot = $('.active-dot');
                 var nextDot = currentDot.next();
+
+                //when we get to the last slide, the next slide becomes the first slide again
 
                 if(nextSlide.length === 0) {
                     nextSlide = $('.slide').first();
@@ -54,10 +61,7 @@ $(document).ready(function(){
             prevDot.addClass('active-dot');
         });
 
-            //need to loop through the response, and assign each epsilonPerson[i] to a slide
-            //maybe epsilonPerson[0] has to equal class current slide, and every other one isn't
-            //then append to dom?
-            //then do the slide, and counters, and arrow functionality, including reversing them
+
 
 
         });
